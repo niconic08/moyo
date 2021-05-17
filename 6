@@ -1,0 +1,15 @@
+a = open("24-5.txt")
+a = a.read()
+flag = 0
+k = 0
+for i in range(len(a)):
+    if a[i] == "(":
+        flag += 1
+    else:
+        if flag > k:
+            k = flag
+        flag = 0
+if flag > k:
+    print(flag)
+else:
+    print(k)
