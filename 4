@@ -1,0 +1,16 @@
+def delitel(a):
+    b = set()
+    for i in range(2, a//2):
+        if a % i == 0:
+            b.add(i)
+    return b
+
+
+kol = 0
+sum = 0
+c = {7, 13, 17, 19}
+for i in range(25000, 35001):
+    if len(delitel(i) & c) > 1:
+        kol += 1
+        sum += i
+print(kol, sum)
