@@ -1,0 +1,33 @@
+def prime(a):
+    f = 0
+    for i in range(2, a//2):
+        if a % i == 0:
+            f = 1
+    if f == 0:
+        return True
+    else:
+        return False
+
+
+def krs(a):
+    b = []
+    m = 1
+    f = 0
+    while m**2 <= a and f == 0:
+        if a % m == 0 and prime(a % m) == True:
+            b.append(a)
+            b.append(a % m)
+            f = 1
+        else:
+            m += 1
+    if b:
+        return b
+
+
+c = 0
+a = [krs(_) for _ in range(478392, 502440)]
+for i in range(len(a)):
+    if len(set(list(str(a[i][0]))) & set(list(str(a[i][1])))) > c:
+        c = len(set(list(str(a[i][0]))) & set(list(str(a[i][1]))))
+        d = a[i]
+print(len(a), d)
