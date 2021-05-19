@@ -1,0 +1,140 @@
+from tkinter import *
+import tkinter.font as font
+from tkinter import messagebox
+def pobeda():
+    global b1t;global b2t; global b3t; global b4t; global b5t; global b6t; global b7t; global b8t; global b9t; global flag
+    b1lbl=Label(text=b1t,height=5,width=10,font=font1).grid(row=1,column=1)
+    b2lbl=Label(text=b2t,height=5,width=10,font=font1).grid(row=1,column=2)
+    b3lbl=Label(text=b3t,height=5,width=10,font=font1).grid(row=1,column=3)
+    b4lbl=Label(text=b4t,height=5,width=10,font=font1).grid(row=2,column=1)
+    b5lbl=Label(text=b5t,height=5,width=10,font=font1).grid(row=2,column=2)
+    b6lbl=Label(text=b6t,height=5,width=10,font=font1).grid(row=2,column=3)
+    b7lbl=Label(text=b7t,height=5,width=10,font=font1).grid(row=3,column=1)
+    b8lbl=Label(text=b8t,height=5,width=10,font=font1).grid(row=3,column=2)
+    b9lbl=Label(text=b9t,height=5,width=10,font=font1).grid(row=3,column=3)
+    if flag=="x": a="o"
+    else: a="x"
+    messagebox.showinfo(title="tic tac toe",message=a+" победил")
+    root.destroy()
+def ni4ya():
+    global b1t;global b2t; global b3t; global b4t; global b5t; global b6t; global b7t; global b8t; global b9t
+    b1lbl=Label(text=b1t,height=5,width=10,font=font1).grid(row=1,column=1)
+    b2lbl=Label(text=b2t,height=5,width=10,font=font1).grid(row=1,column=2)
+    b3lbl=Label(text=b3t,height=5,width=10,font=font1).grid(row=1,column=3)
+    b4lbl=Label(text=b4t,height=5,width=10,font=font1).grid(row=2,column=1)
+    b5lbl=Label(text=b5t,height=5,width=10,font=font1).grid(row=2,column=2)
+    b6lbl=Label(text=b6t,height=5,width=10,font=font1).grid(row=2,column=3)
+    b7lbl=Label(text=b7t,height=5,width=10,font=font1).grid(row=3,column=1)
+    b8lbl=Label(text=b8t,height=5,width=10,font=font1).grid(row=3,column=2)
+    b9lbl=Label(text=b9t,height=5,width=10,font=font1).grid(row=3,column=3)
+    messagebox.showinfo(title="tic tac toe",message="ничья")
+    root.destroy()
+def na4at():
+    global b1t;global b2t; global b3t; global b4t; global b5t; global b6t; global b7t; global b8t; global b9t;global flag; global font1
+    b1t,b2t,b3t,b4t,b5t,b6t,b7t,b8t,b9t="","","","","","","","",""
+    flag="x"
+    b1=Button(text=b1t,height=5,width=10,font=font1,command=bt1).grid(row=1,column=1)
+    b2=Button(text=b2t,height=5,width=10,font=font1,command=bt2).grid(row=1,column=2)
+    b3=Button(text=b3t,height=5,width=10,font=font1,command=bt3).grid(row=1,column=3)
+    b4=Button(text=b4t,height=5,width=10,font=font1,command=bt4).grid(row=2,column=1)
+    b5=Button(text=b5t,height=5,width=10,font=font1,command=bt5).grid(row=2,column=2)
+    b6=Button(text=b6t,height=5,width=10,font=font1,command=bt6).grid(row=2,column=3)
+    b7=Button(text=b7t,height=5,width=10,font=font1,command=bt7).grid(row=3,column=1)
+    b8=Button(text=b8t,height=5,width=10,font=font1,command=bt8).grid(row=3,column=2)
+    b9=Button(text=b9t,height=5,width=10,font=font1,command=bt9).grid(row=3,column=3)
+    hod=Label(text=flag+" ходит",font=10).grid(row=4,column=3)
+def change():
+    global flag;global b1t;global b2t; global b3t; global b4t; global b5t; global b6t; global b7t; global b8t; global b9t; global font1
+    if flag=="x": flag="o"; hod=Label(text=flag+" ходит",font=10).grid(row=4,column=3)
+    else: flag="x"; hod=Label(text=flag+" ходит",font=10).grid(row=4,column=3)
+    if b1t!="": b1lbl=Label(text=b1t,height=5,width=10,font=font1).grid(row=1,column=1)
+    else: b1=Button(text=b1t,height=5,width=10,font=font1,command=bt1).grid(row=1,column=1)
+    if b2t!="": b2lbl=Label(text=b2t,height=5,width=10,font=font1).grid(row=1,column=2)
+    else: b2=Button(text=b2t,height=5,width=10,font=font1,command=bt2).grid(row=1,column=2)
+    if b3t!="": b3lbl=Label(text=b3t,height=5,width=10,font=font1).grid(row=1,column=3)
+    else: b3=Button(text=b3t,height=5,width=10,font=font1,command=bt3).grid(row=1,column=3)
+    if b4t!="": b4lbl=Label(text=b4t,height=5,width=10,font=font1).grid(row=2,column=1)
+    else: b4=Button(text=b4t,height=5,width=10,font=font1,command=bt4).grid(row=2,column=1)
+    if b5t!="": b5lbl=Label(text=b5t,height=5,width=10,font=font1).grid(row=2,column=2)
+    else: b5=Button(text=b5t,height=5,width=10,font=font1,command=bt5).grid(row=2,column=2)
+    if b6t!="": b6lbl=Label(text=b6t,height=5,width=10,font=font1).grid(row=2,column=3)
+    else: b6=Button(text=b6t,height=5,width=10,font=font1,command=bt6).grid(row=2,column=3)
+    if b7t!="": b7lbl=Label(text=b7t,height=5,width=10,font=font1).grid(row=3,column=1)
+    else: b7=Button(text=b7t,height=5,width=10,font=font1,command=bt7).grid(row=3,column=1)
+    if b8t!="": b8lbl=Label(text=b8t,height=5,width=10,font=font1).grid(row=3,column=2)
+    else: b8=Button(text=b8t,height=5,width=10,font=font1,command=bt8).grid(row=3,column=2)
+    if b9t!="": b9lbl=Label(text=b9t,height=5,width=10,font=font1).grid(row=3,column=3)
+    else: b9=Button(text=b9t,height=5,width=10,font=font1,command=bt9).grid(row=3,column=3)
+def bt1():
+    global b1t; global flag
+    b1t=flag
+    change()
+    check()
+def bt2():
+    global b2t; global flag
+    b2t=flag
+    change()
+    check()
+def bt3():
+    global b3t; global flag
+    b3t=flag
+    change()
+    check()
+def bt4():
+    global b4t; global flag
+    b4t=flag
+    change()
+    check()
+def bt5():
+    global b5t; global flag
+    b5t=flag
+    change()
+    check()
+def bt6():
+    global b6t; global flag
+    b6t=flag
+    change()
+    check()
+def bt7():
+    global b7t; global flag
+    b7t=flag
+    change()
+    check()
+def bt8():
+    global b8t; global flag
+    b8t=flag
+    change()
+    check()
+def bt9():
+    global b9t; global flag
+    b9t=flag
+    change()
+    check()
+def check():
+    global b1t;global b2t; global b3t; global b4t; global b5t; global b6t; global b7t; global b8t; global b9t; global flag
+    if flag=="x": a="o"
+    else: a="x"
+    if b1t==b2t==b3t and b1t!="" and b2t!="" and b3t!="": pobeda()
+    elif b1t==b5t==b9t and b1t!="" and b5t!="" and b9t!="": pobeda()
+    elif b3t==b6t==b9t and b3t!="" and b6t!="" and b9t!="": pobeda()
+    elif b1t==b4t==b7t and b1t!="" and b4t!="" and b7t!="": pobeda()
+    elif b7t==b8t==b9t and b7t!="" and b8t!="" and b9t!="": pobeda()
+    elif b7t==b5t==b3t and b7t!="" and b5t!="" and b3t!="": pobeda()
+    elif b1t!="" and b2t!="" and b3t!="" and b4t!="" and b5t!="" and b6t!="" and b7t!="" and b8t!="" and b9t!="": ni4ya()
+flag="x"
+root=Tk()
+root.title("tic tac toe")
+root.geometry("530x600")
+font1=font.Font(family="Arial",size=20, weight='bold')
+b1t,b2t,b3t,b4t,b5t,b6t,b7t,b8t,b9t="","","","","","","","",""
+b1lbl=Label(text=b1t,height=5,width=10,font=font1).grid(row=1,column=1)
+b2lbl=Label(text=b2t,height=5,width=10,font=font1).grid(row=1,column=2)
+b3lbl=Label(text=b3t,height=5,width=10,font=font1).grid(row=1,column=3)
+b4lbl=Label(text=b4t,height=5,width=10,font=font1).grid(row=2,column=1)
+b5lbl=Label(text=b5t,height=5,width=10,font=font1).grid(row=2,column=2)
+b6lbl=Label(text=b6t,height=5,width=10,font=font1).grid(row=2,column=3)
+b7lbl=Label(text=b7t,height=5,width=10,font=font1).grid(row=3,column=1)
+b8lbl=Label(text=b8t,height=5,width=10,font=font1).grid(row=3,column=2)
+b9lbl=Label(text=b9t,height=5,width=10,font=font1).grid(row=3,column=3)
+btn=Button(text="начать",height=1,width=10,font=font1,command=na4at).grid(row=4,column=2)
+root.mainloop()
